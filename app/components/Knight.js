@@ -1,9 +1,7 @@
-var React = require('react');
+import React, { Component } from 'react';
 
-class Knight extends React.Component {
+export default class Knight extends Component {
   render() {
-    return (<span>♘</span>);
+    return <span>♘</span>;
   }
 }
-
-module.exports = Knight;
