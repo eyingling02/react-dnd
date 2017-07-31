@@ -1,7 +1,7 @@
-var React = require('react');
-var PropTypes = require('prop-types');
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-class Square extends React.Component {
+export default class Square extends Component {
   render() {
     const { black } = this.props;
     const fill = black ? 'black' : 'white';
@@ -13,7 +13,7 @@ class Square extends React.Component {
         color: stroke,
         width: '100%',
         height: '100%'
-        }}>
+      }}>
         {this.props.children}
       </div>
     );
@@ -23,4 +23,5 @@ class Square extends React.Component {
 Square.propTypes = {
   black: PropTypes.bool
 };
+
 module.exports = Square;
