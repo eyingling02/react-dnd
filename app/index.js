@@ -7,7 +7,7 @@ var rootEl = document.getElementById('app')
 observe(function (knightPosition) {
 
   ReactDOM.render(
-    <Board knightPosition={knightPosition} />,
+    <Board knightPosition={knightPosition=[0,7]} />,
     rootEl
   );
 });
