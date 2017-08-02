@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Square from './Square';
 import Knight from './Knight';
-import { moveKnight } from './Game';
+import { moveKnight, canMoveKnight } from './Game';
 
 export default class Board extends Component {
   renderSquare(i) {
@@ -17,8 +17,8 @@ export default class Board extends Component {
 
     return (
       <div key={i}
-           onClick={() => this.handleSquareClick(x, y)}
-           style={{ margin: 'auto', padding: 'auto', width: '12.5%', height: '12.5%' }}>
+           style={{ margin: 'auto', padding: 'auto', width: '12.5%', height: '12.5%' }}
+           onClick={() => this.handleSquareClick(x, y)}>
         <Square black={black}>
           {piece}
         </Square>
@@ -26,7 +26,10 @@ export default class Board extends Component {
     );
   }
   handleSquareClick(toX, toY) {
-    moveKnight(toX, toY);
+    if (canMoveKnight(toX, toY)) {
+
+      moveKnight(toX, toY);
+    } 
   }
 
   render() {
@@ -42,8 +45,8 @@ export default class Board extends Component {
         width: '90%',
         height: '90%',
         display: 'flex',
-        // flex: '1',
-        flexDirection: 'row',
+        // // flex: '1',
+        // flexDirection: 'row',
         flexWrap: 'wrap'
       }}>
         {squares}
