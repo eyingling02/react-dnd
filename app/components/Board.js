@@ -29,8 +29,13 @@ export default class Board extends Component {
     if (canMoveKnight(toX, toY)) {
 
       moveKnight(toX, toY);
-    } 
+    }
   }
+  // const squareTarget = {
+  //   drop(props, monitor) {
+  //     moveKnight(props.x, props.y)
+  //   }
+  // }
 
   render() {
     const squares = [];
